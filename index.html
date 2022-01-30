@@ -39,21 +39,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         var allergy_count = 0;
         var cold_count = 0;
 
-	//var totalP = document.getElementById('total');
-	
-        function allergyAdd(){
+	function allergyAdd(){
             allergy_count = allergy_count + 1;
-		//alert(allergy_count);
-	   document.getElementById('total').innerText = allergy_count;
+	    document.getElementById('totalallergy').innerText = allergy_count;
         }
 
         function coldAdd(){
             cold_count = cold_count + 1;
-	    document.getElementById('total').innerHTML = "<b>asdf</b>";
+	    document.getElementById('totalcold').innerText = cold_count;
 
-        }
-	
-	
+        }	
 
   </script>
 
@@ -151,7 +146,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Results</h1>
 	</div>
-	<p id="total"></p>
+	<p>ALLERGY TOTAL</p>
+	
+	<p id="totalallergy"></p>
+	
+	</div>
+	<p>COLD TOTAL</p>
+	
+	<p id="totalcold"></p>
 	</div>
 </div>
 
