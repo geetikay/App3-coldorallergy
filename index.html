@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Geetika Yelugoti
  
 Further Information:
 http://cns.utexas.edu/fri
@@ -17,7 +17,7 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+Web-based app that asks user series of Yes or No questions to determine the probability of them having a cold and them having allergies.
  
 Known Issues:
 blah, blah, blah, blah
@@ -33,23 +33,44 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
-
+	
 
 <script>
+//script tags embed javascript 
+//variable to contain number of options clicked on that correlate to allergies
         var allergy_count = 0;
+//varible to contain number of options clicked on that correlate to cold 
         var cold_count = 0;
+	var allergy_percent = 0; 
+	var cold_percet = 0;
 
+	//fuction adds number of options clicked on that correlate to allergies
 	function allergyAdd(){
             allergy_count = allergy_count + 1;
+		//current allergy count before reaching that page +1 if allergy option is selected
 	    document.getElementById('totalallergy').innerText = allergy_count;
-	    resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent
+		//returns element (resulting value of function) using ID 'totalallergy'
         }
 
+	//fuction adds number of options clicked on that correlate to cold
         function coldAdd(){
             cold_count = cold_count + 1;
+		//current cout count before reaching that page +1 if cold option is selected
 	    document.getElementById('totalcold').innerText = cold_count;
-	    resultText.innerHTML = "Probability it is a cold =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent
+		//returns element (resulting value of function) using ID 'totalcold'
         }	
+
+	function allergyPercent(){
+	    allergy_percent = allergy_count / 4 * 100
+	    document.getElementById('percentallergy').innerText = allergy_percent;
+		
+	}
+	
+	function coldPercent(){
+	    cold_percent = cold_count / 4 * 100
+	    document.getElementById('percentcold').innerText = cold_percent;
+	}
+
 
   </script>
 
@@ -112,8 +133,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?</p>
 	</div>
-	<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
-	<a href="#three" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+	<a href="#three" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
+	<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black"> No </a>
 	</div>
 </div>	
 	
@@ -125,8 +146,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
 	</div>
-	<a href="#four" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
-	<a href="#four" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+	<a href="#four" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
+	<a href="#four" onclick="allergyAdd();" class="w3-btn w3-black"> No </a>
 	</div>
 </div>	
 	
@@ -146,17 +167,22 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <div class="page" id="results">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Results</h1>
+<!--used id to return element (value resulting from functions)-->
 	</div>
-	<p>ALLERGY TOTAL</p>
-	<p id="totalallergy"></p>
-	<p id="Probability it is allargies"></p>
-	<p>COLD TOTAL</p>
-	<p id="totalcold"></p>
-	<p id="Probbility it is a cold"></p>
+	<h3>ALLERGY TOTAL</h3>
+		<p id="totalallergy"></p>
 	
+	<h3>COLD TOTAL</h3>
+		<p id="totalcold"></p>	
+	
+	</div>
+	<h3>PROBABILITY ITS ALLERGY<h3>
+		<p id="percentallergy"></p>
+	
+	<h3>PROBABILITY ITS COLD<h3>>
+		<p id="percentcold"></p>
+	</div>		
 </div>
-
-
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
