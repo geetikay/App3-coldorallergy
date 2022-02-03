@@ -20,7 +20,7 @@ Brief Description of Goal of Code:
 Web-based app that asks user series of Yes or No questions to determine the probability of them having a cold and them having allergies.
  
 Known Issues:
-blah, blah, blah, blah
+none
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
@@ -41,7 +41,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         var allergy_count = 0;
 //varible to contain number of options clicked on that correlate to cold 
         var cold_count = 0;
+//varible to contain value for probability for allergies 
 	var allergy_percent = 0; 
+//varible to contain value for probability for a cold
 	var cold_percent = 0;
 
 	//fuction adds number of options clicked on that correlate to allergies
@@ -51,6 +53,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	    document.getElementById('totalallergy').innerText = allergy_count;
 		//returns element (resulting value of function) using ID 'totalallergy'
 	    allergyPercent();
+		//call to function allergyPercent
         }
 
 	//fuction adds number of options clicked on that correlate to cold
@@ -60,15 +63,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	    document.getElementById('totalcold').innerText = cold_count;
 		//returns element (resulting value of function) using ID 'totalcold'
 	    coldPercent();
+		//call to function coldPercent
 	    
         }	
-
+	//function calculates probability of allergies using variable allergy_count
 	function allergyPercent(){
 	    allergy_percent = allergy_count / 4 * 100
 	    document.getElementById('percentallergy').innerText = allergy_percent;
 		
 	}
-	
+	//function calculates probability of cold using variable cold_count
 	function coldPercent(){
 	    cold_percent = cold_count / 4 * 100
 	    document.getElementById('percentcold').innerText = cold_percent;
@@ -172,13 +176,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<h1>Results</h1>
 	</div>
 <!--used id to return element (value resulting from functions)-->
-	<div> <p>ALLERGY TOTAL</p>
+<!--totalallergy and totalcold elements returned to verify calculated probabilites)-->
+	<!--<div> <p>ALLERGY TOTAL</p>
 		<p id="totalallergy"></p>
 	</div>
 	
 	<div> <p>COLD TOTAL</p>
 		<p id="totalcold"></p>	
-	</div>
+	</div>-->
 	
 	<div> <p>PROBABILITY ITS ALLERGIES</p>
 		<p id="percentallergy"></p>
