@@ -20,7 +20,8 @@ Brief Description of Goal of Code:
 Web-based app that asks user series of Yes or No questions to determine the probability of them having a cold and them having allergies.
  
 Known Issues:
-blah, blah, blah, blah
+none
+
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -61,13 +62,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	    coldPercent();
 	    
         }	
-
+	//fuction caculates probability of allergies based on allegy_count variable
 	function allergyPercent(){
 	    allergy_percent = allergy_count / 4 * 100
 	    document.getElementById('percentallergy').innerText = allergy_percent;
 		
 	}
-	
+	//fuction caculates probability of cold based on cold_count variable	
 	function coldPercent(){
 	    cold_percent = cold_count / 4 * 100
 	    document.getElementById('percentcold').innerText = cold_percent;
